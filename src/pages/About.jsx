@@ -26,9 +26,7 @@ const About = () => {
                         <h4 className="sub-heading">About Me</h4>
                         <h1 className="main-heading">Turning complex problems into <span className="gradient-text">elegant solutions</span></h1>
                         <p className="intro-text">
-                            Hello! I'm a passionate Full Stack Developer based in San Francisco. My core focus is on building scalable web applications and exploring the possibilities of Artificial Intelligence.
-                            I am dedicated to crafting digital experiences that not only look good but perform flawlessly.
-                        </p>
+                           Hi, I’m Setu Madhavani, a Full Stack Developer and UI/UX Designer passionate about building scalable, user-friendly web applications. I enjoy combining clean design with efficient code to create high-performing digital experiences. I’m always exploring new technologies and continuously improving my skills through real-world projects and collaboration.                        </p>
                         <p className="intro-text">
                             When I'm not coding, you can find me exploring new tech trends, contributing to open source, or designing user interfaces.
                         </p>

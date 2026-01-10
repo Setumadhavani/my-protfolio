@@ -74,16 +74,10 @@ const Navbar = () => {
                     {/* Action Buttons */}
                     <div className="nav-actions desktop-only">
                         {!scrolled && (
-                            <>
-                                <Link to="/admin/login" className="nav-resume-link">
-                                    <Lock size={18} />
-                                    <span>Login</span>
-                                </Link>
-                                <a href="/resume.png" target="_blank" rel="noopener noreferrer" className="nav-resume-link">
-                                    <FileText size={18} />
-                                    <span>Resume</span>
-                                </a>
-                            </>
+                            <a href="/resume.png" target="_blank" rel="noopener noreferrer" className="nav-resume-link">
+                                <FileText size={18} />
+                                <span>Resume</span>
+                            </a>
                         )}
 
                         <Link to="/contact" className={`btn-primary-pill ${scrolled ? 'icon-btn' : ''}`}>
@@ -96,6 +90,13 @@ const Navbar = () => {
                                 </>
                             )}
                         </Link>
+
+                        {!scrolled && (
+                            <Link to="/admin/login" className="nav-resume-link">
+                                <Lock size={18} />
+                                <span>Login</span>
+                            </Link>
+                        )}
                     </div>
 
                     {/* Mobile Toggle */}
@@ -125,12 +126,12 @@ const Navbar = () => {
                                 <span>{link.name}</span>
                             </Link>
                         ))}
+                        <Link to="/contact" onClick={() => setIsOpen(false)} className="mobile-link highlight">
+                            Let's Build
+                        </Link>
                         <Link to="/admin/login" onClick={() => setIsOpen(false)} className="mobile-link">
                             <Lock size={18} />
                             <span>Login</span>
-                        </Link>
-                        <Link to="/contact" onClick={() => setIsOpen(false)} className="mobile-link highlight">
-                            Let's Build
                         </Link>
                     </motion.div>
                 )}

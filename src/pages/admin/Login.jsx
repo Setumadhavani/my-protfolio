@@ -19,8 +19,10 @@ const Login = () => {
             await login(email, password);
             navigate('/admin/dashboard');
         } catch (err) {
-            setError('Failed to log in. Please check your credentials.');
             console.error(err);
+            // Show specific error from Firebase
+            const errorMessage = err.message || 'Failed to log in.';
+            setError(errorMessage.replace('Firebase: ', ''));
         }
     };
 

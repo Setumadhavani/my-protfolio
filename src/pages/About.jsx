@@ -23,7 +23,7 @@ const About = () => {
                         animate={{ opacity: 1, x: 0 }}
                         className="about-intro"
                     >
-                        <h4 className="sub-heading">About Me</h4>
+                        <h4 className="sub-heading">About Setu</h4>
                         <h1 className="main-heading">Turning complex problems into <span className="gradient-text">elegant solutions</span></h1>
                         <p className="intro-text">
                             Hello! I'm a passionate Full Stack Developer based in San Francisco. My core focus is on building scalable web applications and exploring the possibilities of Artificial Intelligence.

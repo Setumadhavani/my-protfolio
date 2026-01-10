@@ -22,9 +22,14 @@ const ScrollToTop = () => {
 
 
 
+import Preloader from './components/Preloader';
+
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <Router>
+      {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
       <ScrollToTop />
       <div className="app-wrapper">
         <div className="bg-grid"></div>

@@ -11,10 +11,7 @@ const Footer = () => {
     if (!shouldShow) {
         return (
             <footer className="footer-minimal">
-                <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <p>&copy; 2026 All rights reserved by Setu Madhavani</p>
-                    <Link to="/admin/login" style={{ color: "rgba(255,255,255,0.1)", textDecoration: "none", fontSize: "0.8rem" }}>Admin</Link>
-                </div>
+                <p>&copy; 2026 All rights reserved by Setu Madhavani</p>
             </footer>
         );
     }
@@ -47,9 +44,6 @@ const Footer = () => {
 
                 {/* Background decorative elements */}
                 <div className="footer-bg-pattern"></div>
-            </div>
-            <div style={{ textAlign: "center", marginTop: "1rem", opacity: 0.2 }}>
-                <Link to="/admin/login" style={{ color: "white", textDecoration: "none", fontSize: "0.8rem" }}>Admin Login</Link>
             </div>
         </footer>
     );

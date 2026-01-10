@@ -20,41 +20,27 @@ const ScrollToTop = () => {
 };
 
 
-import { AuthProvider } from './context/AuthContext';
-import Login from './pages/admin/Login';
-import Dashboard from './pages/admin/Dashboard';
-import PrivateRoute from './components/PrivateRoute';
+
 
 function App() {
   return (
     <Router>
-      <AuthProvider>
-        <ScrollToTop />
-        <div className="app-wrapper">
-          <div className="bg-grid"></div>
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/experience" element={<Experience />} />
-              <Route path="/blogs" element={<Blogs />} />
-
-
-              {/* Admin Routes */}
-              <Route path="/admin/login" element={<Login />} />
-              <Route path="/admin/dashboard" element={
-                <PrivateRoute>
-                  <Dashboard />
-                </PrivateRoute>
-              } />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </AuthProvider>
+      <ScrollToTop />
+      <div className="app-wrapper">
+        <div className="bg-grid"></div>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/blogs" element={<Blogs />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Home, User, Folder, Briefcase, FileText, Menu, X, ArrowUpRight, Lock } from 'lucide-react';
+import { Home, User, Folder, Briefcase, FileText, Menu, X, ArrowUpRight } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -90,13 +90,6 @@ const Navbar = () => {
                                 </>
                             )}
                         </Link>
-
-                        {!scrolled && (
-                            <Link to="/admin/login" className="nav-resume-link">
-                                <Lock size={18} />
-                                <span>Login</span>
-                            </Link>
-                        )}
                     </div>
 
                     {/* Mobile Toggle */}
@@ -128,10 +121,6 @@ const Navbar = () => {
                         ))}
                         <Link to="/contact" onClick={() => setIsOpen(false)} className="mobile-link highlight">
                             Let's Build
-                        </Link>
-                        <Link to="/admin/login" onClick={() => setIsOpen(false)} className="mobile-link">
-                            <Lock size={18} />
-                            <span>Login</span>
                         </Link>
                     </motion.div>
                 )}

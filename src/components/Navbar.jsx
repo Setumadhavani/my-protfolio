@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Home, User, Folder, Briefcase, FileText, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Home, User, Folder, Briefcase, FileText, Menu, X, ArrowUpRight, Lock } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -74,10 +74,16 @@ const Navbar = () => {
                     {/* Action Buttons */}
                     <div className="nav-actions desktop-only">
                         {!scrolled && (
-                            <a href="/resume.png" target="_blank" rel="noopener noreferrer" className="nav-resume-link">
-                                <FileText size={18} />
-                                <span>Resume</span>
-                            </a>
+                            <>
+                                <Link to="/admin/login" className="nav-resume-link">
+                                    <Lock size={18} />
+                                    <span>Login</span>
+                                </Link>
+                                <a href="/resume.png" target="_blank" rel="noopener noreferrer" className="nav-resume-link">
+                                    <FileText size={18} />
+                                    <span>Resume</span>
+                                </a>
+                            </>
                         )}
 
                         <Link to="/contact" className={`btn-primary-pill ${scrolled ? 'icon-btn' : ''}`}>
@@ -119,6 +125,10 @@ const Navbar = () => {
                                 <span>{link.name}</span>
                             </Link>
                         ))}
+                        <Link to="/admin/login" onClick={() => setIsOpen(false)} className="mobile-link">
+                            <Lock size={18} />
+                            <span>Login</span>
+                        </Link>
                         <Link to="/contact" onClick={() => setIsOpen(false)} className="mobile-link highlight">
                             Let's Build
                         </Link>

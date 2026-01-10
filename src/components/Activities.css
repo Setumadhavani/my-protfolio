@@ -33,9 +33,9 @@
 }
 
 /* Pause on hover for better interaction */
-.marquee-track:hover {
+/* .marquee-track:hover {
     animation-play-state: paused;
-}
+} */
 
 @keyframes scroll {
     0% {

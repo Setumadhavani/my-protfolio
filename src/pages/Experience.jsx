@@ -6,81 +6,47 @@ import './Experience.css';
 const experiences = [
     {
         id: 1,
-<<<<<<< HEAD
         role: "freelancer",
         company: "Self Employed",
         period: "2023 - Present",
         type: "work",
         image: "/freelance.png",
-=======
-        role: "Senior Full Stack Developer",
-        company: "Tech Innovations Inc.",
-        period: "2023 - Present",
-        type: "work",
->>>>>>> d8fcaae8a021a30516d3191b20974523726c2935
         description: "Leading the development of scalable web applications using React, Node.js, and AWS. Mentoring junior developers and implementing code quality standards."
     },
     {
         id: 2,
-<<<<<<< HEAD
         role: "Technical Lead",
         company: "AWS Cloud Club at Silver Oak University",
         period: "2025 - PRESENT",
         type: "education",
         image: "http://ieee.socet.edu.in/wp-content/uploads/2026/01/Copy-of-Cloud-Club-Color-White-Transparent.png",
         description: "Specialized in Artificial Intelligence and Human-Computer Interaction. Graduated with Honors."
-=======
-        role: "Frontend Developer",
-        company: "Creative Digital Agency",
-        period: "2021 - 2023",
-        type: "work",
-        description: "Built interactive and responsive user interfaces for high-profile clients. Optimized website performance and improved SEO rankings."
->>>>>>> d8fcaae8a021a30516d3191b20974523726c2935
     },
     {
         id: 3,
         role: "Chairperson IEEE SOU SIGHT SBG",
-<<<<<<< HEAD
         company: "IEEE SOU SB",
         period: "2026 - PRESENT",
         type: "education",
         image: "http://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png",
-=======
-        company: "Silver Oak University IEEE Student Branch",
-        period: "2026 - PRESENT",
-        type: "education",
->>>>>>> d8fcaae8a021a30516d3191b20974523726c2935
         description: "Specialized in Artificial Intelligence and Human-Computer Interaction. Graduated with Honors."
     },
     {
         id: 4,
         role: "Webmaster IEEE SOU SC SBC",
-<<<<<<< HEAD
         company: " IEEE SOU SB",
         period: "2024 - 2025",
         type: "work",
         image: "http://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png",
-=======
-        company: "Silver Oak University IEEE Student Branch",
-        period: "2024 - 2025",
-        type: "work",
->>>>>>> d8fcaae8a021a30516d3191b20974523726c2935
         description: "Collaborated with various startups to deliver custom web solutions. Managed full client lifecycle from requirement gathering to deployment."
     },
     {
         id: 5,
-<<<<<<< HEAD
         role: "Bachelor of Technology Computer Engineering(Honors in ML & Data Science)",
         company: "Silver Oak University",
         period: "2023 - 2027",
         type: "education",
         image: "http://ieee.socet.edu.in/wp-content/uploads/2025/04/Vector.png",
-=======
-        role: "Bachelor of Technology",
-        company: "Silver Oak University University",
-        period: "2023 - 2027",
-        type: "education",
->>>>>>> d8fcaae8a021a30516d3191b20974523726c2935
         description: "Foundation in Computer Science engineering. Active member of the Coding Club and IEEE student branch."
     }
 ];
@@ -126,7 +92,6 @@ const Experience = () => {
                         >
                             <div className="timeline-content">
                                 <div className="timeline-dot"></div>
-<<<<<<< HEAD
                                 <div className="timeline-header-content">
                                     {item.image && (
                                         <div className="timeline-image-wrapper">
@@ -148,16 +113,6 @@ const Experience = () => {
                                         </h4>
                                     </div>
                                 </div>
-=======
-                                <div className="timeline-date">
-                                    <Calendar size={14} className="mr-1" /> {item.period}
-                                </div>
-                                <h3 className="timeline-title">{item.role}</h3>
-                                <h4 className="timeline-company">
-                                    {item.type === 'work' ? <Briefcase size={16} /> : <GraduationCap size={16} />}
-                                    {item.company}
-                                </h4>
->>>>>>> d8fcaae8a021a30516d3191b20974523726c2935
                                 <p className="timeline-description">{item.description}</p>
                             </div>
                         </motion.div>

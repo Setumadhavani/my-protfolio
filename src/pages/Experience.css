@@ -106,30 +106,7 @@
     font-family: var(--font-mono);
 }
 
-<<<<<<< HEAD
 
-=======
-.timeline-title {
-    font-size: 1.25rem;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
-}
-
-.timeline-company {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-.timeline-description {
-    color: #888;
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
->>>>>>> d8fcaae8a021a30516d3191b20974523726c2935
 
 @media (max-width: 768px) {
     .timeline::after {
@@ -153,7 +130,6 @@
         /* Adjust to align with line */
         right: auto;
     }
-<<<<<<< HEAD
 }
 
 /* Image styling */
@@ -226,6 +202,4 @@
     .timeline-title {
         font-size: 1rem;
     }
-=======
->>>>>>> d8fcaae8a021a30516d3191b20974523726c2935
 }

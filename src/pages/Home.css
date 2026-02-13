@@ -1,0 +1,320 @@
+/* Tech Scroll Section (Unique) */
+.tech-scroll-section {
+    padding: 4rem 0;
+    /* Use variables for gradient */
+    background: linear-gradient(to bottom, var(--bg-color) 0%, var(--card-bg) 50%, var(--bg-color) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-label {
+    text-align: center;
+    color: var(--accent-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.tech-scroll-wrapper {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    position: relative;
+    /* Fade edges - kept simple for now, black fade works best on dark mode. For light mode, we might need white fade. 
+       Actually, 'mask-image' uses alpha channel so color doesn't matter, just opacity. 
+       So 'black' vs 'transparent' works for both modes if logic is opacity based. 
+    */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.tech-scroll-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    padding: 1rem 0;
+    /* Add vertical space for hover effects */
+    align-items: center;
+}
+
+.track-left {
+    animation: scrollLeft 40s linear infinite;
+}
+
+.track-right {
+    animation: scrollRight 40s linear infinite;
+}
+
+.tech-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--tech-pill-bg);
+    border: 1px solid var(--tech-pill-border);
+    /* Subtle border */
+    padding: 0.75rem 1.75rem;
+    border-radius: 50px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    cursor: default;
+    /* Glow effect on load */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    /* reduced opacity */
+}
+
+.tech-pill:hover {
+    background: rgba(124, 58, 237, 0.15);
+    /* Accent tint */
+    border-color: var(--accent-primary);
+    color: white;
+    box-shadow: 0 0 15px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+.tech-pill .tech-icon {
+    display: flex;
+    color: var(--accent-primary);
+}
+
+.tech-pill:hover .tech-icon {
+    color: white;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Section Common */
+.section-preview,
+.section-brief {
+    padding: 6rem 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.view-all-link {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Preview Grid */
+.preview-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: repeat(2, 250px);
+    gap: 1.5rem;
+}
+
+.preview-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid var(--card-border);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    display: flex;
+    align-items: flex-end;
+}
+
+.preview-card:hover {
+    transform: scale(0.98);
+}
+
+.preview-card.main {
+    grid-row: span 2;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.card-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.preview-card:hover .card-bg-image {
+    transform: scale(1.1);
+}
+
+.preview-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.6) 50%,
+            rgba(0, 0, 0, 0.95) 100%);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.preview-card:hover .preview-overlay {
+    opacity: 0.9;
+}
+
+.preview-content {
+    position: relative;
+    z-index: 10;
+}
+
+.preview-content h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.preview-content p {
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .preview-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .preview-card.main {
+        grid-row: auto;
+        height: 300px;
+    }
+}
+
+/* About/Brief */
+.section-brief {
+    background: linear-gradient(to bottom, transparent, rgba(124, 58, 237, 0.05));
+    text-align: center;
+}
+
+.brief-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.brief-content p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    /* Keep wrap for mobile, but sizes will fit desktop now */
+    margin-top: 3rem;
+}
+
+.stat-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    /* Slightly smaller radius */
+    padding: 1.5rem 1rem;
+    /* Reduced padding */
+    min-width: 140px;
+    /* Reduced min-width */
+    width: 160px;
+    /* Fixed width for uniformity */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-primary);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    /* Reduced font size from 3.5rem */
+    font-weight: 800;
+    color: var(--accent-primary);
+    /* Changed to accent color as per request (blue-ish usually) */
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    /* Reduced margin */
+    /* Gradient text option */
+    background: linear-gradient(135deg, var(--accent-primary), #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.infinity-anim {
+    display: inline-block;
+    animation: pulse-scale 3s ease-in-out infinite;
+    font-size: 3rem;
+    /* Reduced from 4rem */
+    margin-bottom: 5px;
+    /* Alignment fix */
+}
+
+@keyframes pulse-scale {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 rgba(124, 58, 237, 0));
+    }
+
+    50% {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.4));
+    }
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+}

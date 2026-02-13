@@ -1,0 +1,243 @@
+/* About Page Layout */
+.about-page {
+    padding-top: 100px;
+}
+
+.about-header {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    align-items: center;
+}
+
+@media (max-width: 968px) {
+    .about-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+}
+
+/* About Visual - Image Profile */
+.about-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-img-large {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    /* Transparent PNG already, just ensure brightness */
+    filter: brightness(1.1) contrast(1.1);
+    opacity: 1;
+    transition: transform 0.5s ease;
+    /* Seamless blend at bottom */
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.profile-img-large:hover {
+    transform: scale(1.02);
+    opacity: 1;
+}
+
+/* Removed old frame styles */
+
+/* Intro Text */
+.sub-heading {
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.main-heading {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    text-align: justify;
+}
+
+@media (max-width: 968px) {
+    .intro-text {
+        margin: 0 auto 1.5rem;
+    }
+}
+
+/* Focus Section grid */
+.focus-section {
+    margin-top: 3rem;
+}
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.focus-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.focus-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 40px -10px rgba(124, 58, 237, 0.2);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-primary);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+}
+
+.focus-card:hover .card-icon {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.focus-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.card-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.card-tags li {
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+
+    color: #e0e0e0;
+}
+
+/* Code Snippet Card */
+.code-snippet-card {
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    /* Center the card */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    /* reset text align inside card */
+}
+
+.code-header {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ff5f56;
+}
+
+.dot.yellow {
+    background: #ffbd2e;
+}
+
+.dot.green {
+    background: #27c93f;
+}
+
+.code-content {
+    font-family: 'Fira Code', 'Space Grotesk', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    margin: 0;
+    padding-left: 0.5rem;
+    white-space: pre-wrap;
+    /* Wrap long lines */
+    word-break: break-word;
+}
+
+.keyword {
+    color: #c678dd;
+}
+
+/* Purple */
+.variable {
+    color: #e5c07b;
+}
+
+/* Yellow */
+.key {
+    color: #e06c75;
+}
+
+/* Red */
+.string {
+    color: #98c379;
+}
+
+/* Green */
+.boolean {
+    color: #d19a66;
+}
+
+/* Orange */
+
+@media (max-width: 968px) {
+    .code-snippet-card {
+        margin: 2rem auto 0;
+    }
+}

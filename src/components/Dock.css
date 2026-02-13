@@ -1,0 +1,165 @@
+.dock-container {
+    position: fixed;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    pointer-events: none;
+    /* Let clicks pass through outside the dock */
+    padding: 0 1rem;
+}
+
+.dock-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    /* Pill shape */
+    gap: 2rem;
+    pointer-events: auto;
+    /* Re-enable clicks on the dock */
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+    max-width: 1000px;
+    width: 100%;
+}
+
+.dock-brand {
+    flex-shrink: 0;
+}
+
+.dock-name {
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.dock-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.dock-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    color: #a1a1aa;
+    /* Secondary text color */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+    border-radius: 9999px;
+    z-index: 1;
+}
+
+.dock-item:hover {
+    color: #fff;
+}
+
+.dock-item.active {
+    color: #fff;
+}
+
+.dock-icon {
+    display: flex;
+    align-items: center;
+}
+
+.dock-active-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    z-index: -1;
+}
+
+.dock-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.dock-resume-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    transition: background-color 0.2s;
+}
+
+.dock-resume-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dock-contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 9999px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dock-contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .dock-bar {
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+
+    .dock-logo-text {
+        display: none;
+    }
+
+    .dock-text {
+        display: none;
+    }
+
+    .dock-item {
+        padding: 0.6rem;
+    }
+
+    .dock-resume-btn span,
+    .dock-contact-btn span {
+        display: none;
+    }
+
+    .dock-resume-btn,
+    .dock-contact-btn {
+        padding: 0.6rem;
+    }
+}

@@ -4,7 +4,7 @@ import { Code2, Brain, Palette, Rocket } from 'lucide-react'; // Added import fo
 import './About.css';
 
 // Using direct image URL
-const profileImg = 'https://in3700.wordpress.com/wp-content/uploads/2026/02/setu.jpeg';
+const profileImg = 'https://in3700.wordpress.com/wp-content/uploads/2026/02/profile_v4.png';
 
 const About = () => {
     return (

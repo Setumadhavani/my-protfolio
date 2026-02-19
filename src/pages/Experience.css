@@ -1,0 +1,736 @@
+/* =============================================
+   EXPERIENCE — HOLOGRAPHIC CARD GRID
+   Professional Dark Theme
+   ============================================= */
+
+/* ── Page ── */
+.exp-page {
+    padding-top: 110px;
+    padding-bottom: 8rem;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ── Ambient Orbs ── */
+.exp-orb {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(100px);
+    z-index: 0;
+}
+
+.exp-orb-1 {
+    width: 560px;
+    height: 560px;
+    top: -160px;
+    right: -120px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.13) 0%, transparent 70%);
+    animation: orbFloat1 14s ease-in-out infinite alternate;
+}
+
+.exp-orb-2 {
+    width: 420px;
+    height: 420px;
+    bottom: 5%;
+    left: -100px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+    animation: orbFloat2 18s ease-in-out infinite alternate;
+}
+
+@keyframes orbFloat1 {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-30px, 50px);
+    }
+}
+
+@keyframes orbFloat2 {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(40px, -35px);
+    }
+}
+
+/* ── Subtle Grid ── */
+.exp-grid {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.016) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.016) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 75% 75% at 50% 40%, black 20%, transparent 100%);
+}
+
+/* ── BG Watermark ── */
+.exp-bg-watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(5rem, 15vw, 13rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.02);
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    white-space: nowrap;
+    font-family: var(--font-mono, monospace);
+}
+
+/* ── Header ── */
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.exp-header-left {
+    flex: 1;
+}
+
+/* ── Eyebrow ── */
+.exp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #a78bfa;
+    background: rgba(168, 85, 247, 0.07);
+    border: 1px solid rgba(168, 85, 247, 0.18);
+    padding: 0.26rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 1.1rem;
+}
+
+/* ── Title ── */
+.exp-title {
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -2.5px;
+    color: #fff;
+    margin-bottom: 0.9rem;
+}
+
+.exp-title-accent {
+    background: linear-gradient(130deg, #c084fc 0%, #818cf8 55%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+/* Soft glow behind accent */
+.exp-title-accent::after {
+    content: 'Journey';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(130deg, #c084fc 0%, #818cf8 55%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: blur(14px);
+    opacity: 0.35;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ── Subtitle ── */
+.exp-subtitle {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.42);
+    max-width: 400px;
+    line-height: 1.8;
+}
+
+/* ── Resume Button ── */
+.exp-resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(168, 85, 247, 0.08);
+    border: 1px solid rgba(168, 85, 247, 0.28);
+    color: #c4b5fd;
+    text-decoration: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    backdrop-filter: blur(12px);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.exp-resume-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.18), rgba(56, 189, 248, 0.12));
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.exp-resume-btn:hover::before {
+    opacity: 1;
+}
+
+.exp-resume-btn:hover {
+    border-color: rgba(168, 85, 247, 0.5);
+    box-shadow: 0 0 28px rgba(168, 85, 247, 0.2);
+    color: #fff;
+}
+
+/* ── Stats Bar ── */
+.exp-stats-bar {
+    display: flex;
+    margin-bottom: 2.2rem;
+    background: rgba(255, 255, 255, 0.022);
+    border: 1px solid rgba(255, 255, 255, 0.055);
+    border-radius: 14px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+}
+
+.exp-stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.045);
+    gap: 0.18rem;
+    transition: background 0.25s;
+}
+
+.exp-stat-item:last-child {
+    border-right: none;
+}
+
+.exp-stat-item:hover {
+    background: rgba(168, 85, 247, 0.05);
+}
+
+.exp-stat-value {
+    font-size: 1.45rem;
+    font-weight: 900;
+    background: linear-gradient(130deg, #c084fc, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: var(--font-mono, monospace);
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.exp-stat-label {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+/* ── Filters ── */
+.exp-filters {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.exp-filter-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1rem;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.38);
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    overflow: hidden;
+}
+
+.filter-active-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.16), rgba(79, 70, 229, 0.1));
+    border-radius: 9px;
+    z-index: -1;
+}
+
+.exp-filter-btn.active {
+    color: #c4b5fd;
+    border-color: rgba(168, 85, 247, 0.38);
+    font-weight: 600;
+}
+
+.exp-filter-btn:not(.active):hover {
+    color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.13);
+}
+
+.filter-icon {
+    display: flex;
+    align-items: center;
+}
+
+.filter-count {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 50px;
+    padding: 0.04rem 0.42rem;
+    font-size: 0.68rem;
+    font-family: var(--font-mono, monospace);
+    color: rgba(255, 255, 255, 0.28);
+}
+
+.exp-filter-btn.active .filter-count {
+    background: rgba(168, 85, 247, 0.16);
+    color: #a78bfa;
+}
+
+/* =============================================
+   HOLOGRAPHIC CARD GRID
+   ============================================= */
+.holo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 1.25rem;
+    position: relative;
+    z-index: 2;
+    perspective: 1000px;
+}
+
+/* ── Card ── */
+.holo-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.028);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+    padding: 1.5rem;
+    overflow: hidden;
+    backdrop-filter: blur(14px);
+    cursor: default;
+    transform-style: preserve-3d;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.holo-card:hover {
+    border-color: rgba(var(--accent-rgb), 0.32);
+    box-shadow:
+        0 0 0 1px rgba(var(--accent-rgb), 0.08),
+        0 24px 64px rgba(0, 0, 0, 0.45),
+        0 0 36px rgba(var(--accent-rgb), 0.1);
+}
+
+/* ── Shimmer ── */
+.holo-shimmer {
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    pointer-events: none;
+    z-index: 0;
+    transition: background 0.08s;
+}
+
+/* ── Top Accent Bar ── */
+.holo-top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    border-radius: 18px 18px 0 0;
+    transform-origin: left;
+    z-index: 3;
+}
+
+/* ── Corner Accents ── */
+.holo-corner {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-style: solid;
+    border-color: transparent;
+    pointer-events: none;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.3s, width 0.3s, height 0.3s;
+}
+
+.holo-card:hover .holo-corner {
+    opacity: 0.7;
+}
+
+.holo-tl {
+    top: 8px;
+    left: 8px;
+    border-top-width: 1.5px;
+    border-left-width: 1.5px;
+    border-radius: 3px 0 0 0;
+}
+
+.holo-br {
+    bottom: 8px;
+    right: 8px;
+    border-bottom-width: 1.5px;
+    border-right-width: 1.5px;
+    border-radius: 0 0 3px 0;
+}
+
+/* ── Card Header ── */
+.holo-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.holo-logo-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    border: 1.5px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+.holo-card:hover .holo-logo-wrap {
+    transform: scale(1.08) rotate(-4deg);
+    box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.22);
+}
+
+.holo-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.holo-header-badges {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+}
+
+/* ── Type Badge ── */
+.holo-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 0.18rem 0.52rem;
+    border-radius: 50px;
+    border: 1px solid;
+}
+
+/* ── Live Badge ── */
+.holo-live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 0.16rem 0.48rem;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+}
+
+.holo-live-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #10b981;
+    flex-shrink: 0;
+    animation: livePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0);
+    }
+}
+
+/* ── Body ── */
+.holo-body {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    margin-bottom: 1.1rem;
+}
+
+.holo-role {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #f1f5f9;
+    margin-bottom: 0.2rem;
+    line-height: 1.35;
+}
+
+.holo-company {
+    font-size: 0.76rem;
+    font-weight: 600;
+    margin-bottom: 0.65rem;
+    opacity: 0.9;
+}
+
+.holo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 0.8rem;
+}
+
+.holo-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.32rem;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.32);
+    font-family: var(--font-mono, monospace);
+}
+
+.holo-meta svg {
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+.holo-desc {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.78;
+}
+
+/* ── Footer ── */
+.holo-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    padding-top: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ── Tags ── */
+.holo-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    flex: 1;
+}
+
+.holo-tag {
+    font-size: 0.67rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: all 0.2s;
+    letter-spacing: 0.2px;
+}
+
+.holo-card:hover .holo-tag {
+    background: rgba(var(--tag-rgb), 0.09);
+    color: var(--tag-accent);
+    border-color: rgba(var(--tag-rgb), 0.22);
+}
+
+/* ── Stat Chip ── */
+.holo-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.3rem 0.65rem;
+    border-radius: 7px;
+    border: 1px solid;
+    white-space: nowrap;
+    font-family: var(--font-mono, monospace);
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+}
+
+/* ── Index Watermark ── */
+.holo-index {
+    position: absolute;
+    bottom: 0.9rem;
+    right: 1.1rem;
+    font-size: 3.5rem;
+    font-weight: 900;
+    font-family: var(--font-mono, monospace);
+    opacity: 0.03;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -3px;
+    transition: opacity 0.3s;
+    z-index: 0;
+}
+
+.holo-card:hover .holo-index {
+    opacity: 0.055;
+}
+
+/* ── Bottom Glow Bar ── */
+.holo-glow-bar {
+    position: absolute;
+    bottom: 0;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    border-radius: 50%;
+    filter: blur(1px);
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ── Footer Divider ── */
+.exp-footer-line {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(168, 85, 247, 0.35),
+            rgba(56, 189, 248, 0.35),
+            transparent);
+    margin-top: 4.5rem;
+    transform-origin: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exp-footer-icon {
+    position: absolute;
+    color: #a78bfa;
+    background: var(--bg-primary, #0a0a0f);
+    padding: 0 0.6rem;
+    filter: drop-shadow(0 0 6px rgba(167, 139, 250, 0.6));
+    display: flex;
+    align-items: center;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 900px) {
+    .holo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .exp-title {
+        font-size: 2.5rem;
+        letter-spacing: -2px;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .exp-resume-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .holo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .exp-stats-bar {
+        flex-wrap: wrap;
+    }
+
+    .exp-stat-item {
+        flex: 1 1 45%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+    }
+
+    .exp-stat-item:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, 0.045);
+    }
+}
+
+@media (max-width: 480px) {
+    .exp-title {
+        font-size: 2rem;
+        letter-spacing: -1.5px;
+    }
+
+    .holo-card {
+        padding: 1.2rem;
+    }
+
+    .holo-role {
+        font-size: 0.93rem;
+    }
+
+    .exp-stat-item {
+        flex: 1 1 100%;
+        border-right: none;
+    }
+}

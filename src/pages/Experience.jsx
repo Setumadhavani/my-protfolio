@@ -47,9 +47,27 @@ const experiences = [
     },
     {
         id: 3,
-        role: 'Chairperson IEEE SOU SIGHT SBG',
+        role: 'Chairperson IEEE SOU WIE SB AG',
         company: 'IEEE SOU SB',
         period: '2026 – Present',
+        year: '2025',
+        type: 'work',
+        image: 'http://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png',
+        location: 'Silver Oak University',
+        description:
+            'Leading the Women in Engineering affinity group, empowering women in technology through workshops, mentorship programs, and inspiring initiatives at Silver Oak University.',
+        tags: ['IEEE', 'WIE', 'Leadership', 'Empowerment'],
+        accent: '#e879f9',
+        accentRgb: '232,121,249',
+        current: true,
+        StatIcon: Users,
+        stat: '80+ Members',
+    },
+    {
+        id: 4,
+        role: 'Chairperson IEEE SOU SIGHT SBG',
+        company: 'IEEE SOU SB',
+        period: '2026 – JAN TO MARCH',
         year: '2026',
         type: 'work',
         image: 'http://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png',
@@ -64,10 +82,10 @@ const experiences = [
         stat: '100+ Members',
     },
     {
-        id: 4,
+        id: 5,
         role: 'Webmaster IEEE SOU SC SBC',
         company: 'IEEE SOU SB',
-        period: '2024 – 2025',
+        period: '2025 – 2026',
         year: '2024',
         type: 'work',
         image: 'http://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png',
@@ -82,7 +100,7 @@ const experiences = [
         stat: '5 Sub-sites',
     },
     {
-        id: 5,
+        id: 6,
         role: 'B.Tech Computer Engineering',
         company: 'Silver Oak University',
         period: '2023 – 2027',
@@ -337,7 +355,7 @@ const Experience = () => {
                 >
                     {[
                         { label: 'Years Active', value: '2+' },
-                        { label: 'Roles Held', value: '5' },
+                        { label: 'Roles Held', value: '6' },
                         { label: 'Projects', value: '20+' },
                         { label: 'Mentored', value: '50+' },
                     ].map((s, i) => (

@@ -83,7 +83,7 @@ const experiences = [
     },
     {
         id: 5,
-        role: 'Webmaster IEEE SOU SC SBC',
+        role: 'Webmaster IEEE SOU CS SBC',
         company: 'IEEE SOU SB',
         period: '2025 – 2026',
         year: '2024',
@@ -119,158 +119,119 @@ const experiences = [
     },
 ];
 
-/* ─── Holographic Card ──────────────────────────────── */
-const HoloCard = ({ item, index }) => {
+/* ─── Timeline Item ──────────────────────────────── */
+const TimelineItem = ({ item, index, isLeft }) => {
     const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: '-50px' });
-    const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
+    const inView = useInView(ref, { once: true, margin: '-80px' });
     const [hovered, setHovered] = useState(false);
 
     const { StatIcon } = item;
 
-    const handleMouseMove = (e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        setMousePos({
-            x: (e.clientX - rect.left) / rect.width,
-            y: (e.clientY - rect.top) / rect.height,
-        });
-    };
-
-    const rotateX = hovered ? (mousePos.y - 0.5) * -10 : 0;
-    const rotateY = hovered ? (mousePos.x - 0.5) * 10 : 0;
-
     return (
         <motion.div
             ref={ref}
-            className="holo-card"
-            style={{ '--accent': item.accent, '--accent-rgb': item.accentRgb }}
-            initial={{ opacity: 0, y: 50, rotateX: 0, rotateY: 0 }}
-            animate={inView
-                ? { opacity: 1, y: 0, rotateX, rotateY }
-                : { opacity: 0, y: 50, rotateX: 0, rotateY: 0 }
-            }
-            transition={{
-                opacity: { duration: 0.55, delay: index * 0.09, ease: [0.22, 1, 0.36, 1] },
-                y:       { duration: 0.55, delay: index * 0.09, ease: [0.22, 1, 0.36, 1] },
-                rotateX: { duration: 0.15 },
-                rotateY: { duration: 0.15 },
-            }}
-            onMouseMove={handleMouseMove}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => { setHovered(false); setMousePos({ x: 0.5, y: 0.5 }); }}
+            className={`timeline-item ${isLeft ? 'left' : 'right'}`}
+            initial={{ opacity: 0, x: isLeft ? -60 : 60 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: isLeft ? -60 : 60 }}
+            transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
         >
-            {/* Shimmer layer */}
-            <div
-                className="holo-shimmer"
-                style={{
-                    background: hovered
-                        ? `radial-gradient(circle at ${mousePos.x * 100}% ${mousePos.y * 100}%, rgba(${item.accentRgb},0.15) 0%, transparent 55%)`
-                        : 'none',
-                }}
-            />
-
-            {/* Top accent bar */}
+            {/* Timeline Node */}
             <motion.div
-                className="holo-top-bar"
-                style={{ background: item.accent }}
-                initial={{ scaleX: 0 }}
-                animate={inView ? { scaleX: hovered ? 1 : 0.25 } : { scaleX: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.09 + 0.2 }}
-            />
+                className="timeline-node"
+                style={{ '--accent': item.accent, '--accent-rgb': item.accentRgb }}
+                initial={{ scale: 0 }}
+                animate={inView ? { scale: 1 } : { scale: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.12 + 0.2, type: 'spring', stiffness: 200 }}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+            >
+                <div className="node-ring" />
+                <div className="node-core" style={{ background: item.accent }}>
+                    {item.type === 'work' ? <Briefcase size={14} /> : <GraduationCap size={14} />}
+                </div>
+                <motion.div
+                    className="node-pulse"
+                    style={{ borderColor: item.accent }}
+                    animate={hovered ? { scale: [1, 1.5], opacity: [0.5, 0] } : {}}
+                    transition={{ duration: 1, repeat: hovered ? Infinity : 0 }}
+                />
+            </motion.div>
 
-            {/* Corner accents */}
-            <div className="holo-corner holo-tl" style={{ borderColor: item.accent }} />
-            <div className="holo-corner holo-br" style={{ borderColor: item.accent }} />
-
-            {/* Header row */}
-            <div className="holo-header">
-                <div
-                    className="holo-logo-wrap"
-                    style={{
-                        borderColor: `rgba(${item.accentRgb},0.28)`,
-                        background: `rgba(${item.accentRgb},0.07)`,
-                    }}
-                >
-                    <img src={item.image} alt={item.company} className="holo-logo" />
+            {/* Content Card */}
+            <motion.div
+                className="timeline-card"
+                style={{ '--accent': item.accent, '--accent-rgb': item.accentRgb }}
+                whileHover={{ scale: 1.02, y: -4 }}
+                transition={{ duration: 0.3 }}
+            >
+                {/* Year Badge */}
+                <div className="timeline-year" style={{ background: item.accent }}>
+                    {item.year}
                 </div>
 
-                <div className="holo-header-badges">
-                    <span
-                        className="holo-type-badge"
+                {/* Card Header */}
+                <div className="timeline-card-header">
+                    <div className="timeline-logo" style={{ borderColor: `rgba(${item.accentRgb},0.3)` }}>
+                        <img src={item.image} alt={item.company} />
+                    </div>
+                    <div className="timeline-badges">
+                        {item.current && (
+                            <span className="badge-live">
+                                <span className="live-dot" />
+                                Active
+                            </span>
+                        )}
+                    </div>
+                </div>
+
+                {/* Card Body */}
+                <div className="timeline-card-body">
+                    <h3 className="timeline-role">{item.role}</h3>
+                    <p className="timeline-company" style={{ color: item.accent }}>
+                        {item.company}
+                    </p>
+
+                    <div className="timeline-meta">
+                        <span><Calendar size={12} />{item.period}</span>
+                        <span><MapPin size={12} />{item.location}</span>
+                    </div>
+
+                    <p className="timeline-desc">{item.description}</p>
+
+                    {/* Tags */}
+                    <div className="timeline-tags">
+                        {item.tags.map(tag => (
+                            <span
+                                key={tag}
+                                className="timeline-tag"
+                                style={{
+                                    background: `rgba(${item.accentRgb},0.1)`,
+                                    borderColor: `rgba(${item.accentRgb},0.25)`,
+                                    color: item.accent
+                                }}
+                            >
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+
+                    {/* Stat */}
+                    <div
+                        className="timeline-stat"
                         style={{
-                            color: item.accent,
                             background: `rgba(${item.accentRgb},0.1)`,
-                            borderColor: `rgba(${item.accentRgb},0.28)`,
+                            borderColor: `rgba(${item.accentRgb},0.3)`,
+                            color: item.accent
                         }}
                     >
-                        {item.type === 'work'
-                            ? <Briefcase size={10} />
-                            : <GraduationCap size={10} />}
-                        {item.type === 'work' ? 'Work' : 'Education'}
-                    </span>
-
-                    {item.current && (
-                        <span className="holo-live-badge">
-                            <span className="holo-live-dot" />
-                            Live
-                        </span>
-                    )}
-                </div>
-            </div>
-
-            {/* Body */}
-            <div className="holo-body">
-                <h3 className="holo-role">{item.role}</h3>
-                <p className="holo-company" style={{ color: item.accent }}>{item.company}</p>
-
-                <div className="holo-meta">
-                    <span><Calendar size={11} />{item.period}</span>
-                    <span><MapPin size={11} />{item.location}</span>
+                        <StatIcon size={14} />
+                        {item.stat}
+                    </div>
                 </div>
 
-                <p className="holo-desc">{item.description}</p>
-            </div>
-
-            {/* Footer */}
-            <div className="holo-footer">
-                <div className="holo-tags">
-                    {item.tags.map(tag => (
-                        <span
-                            key={tag}
-                            className="holo-tag"
-                            style={{ '--tag-rgb': item.accentRgb, '--tag-accent': item.accent }}
-                        >
-                            {tag}
-                        </span>
-                    ))}
-                </div>
-
-                <div
-                    className="holo-stat"
-                    style={{
-                        color: item.accent,
-                        background: `rgba(${item.accentRgb},0.08)`,
-                        borderColor: `rgba(${item.accentRgb},0.22)`,
-                    }}
-                >
-                    <StatIcon size={12} />
-                    {item.stat}
-                </div>
-            </div>
-
-            {/* Index watermark */}
-            <div className="holo-index" style={{ color: item.accent }}>
-                {String(index + 1).padStart(2, '0')}
-            </div>
-
-            {/* Bottom glow */}
-            <div
-                className="holo-glow-bar"
-                style={{
-                    background: `linear-gradient(90deg, transparent, ${item.accent}66, transparent)`,
-                    opacity: hovered ? 1 : 0,
-                }}
-            />
+                {/* Accent Line */}
+                <div className="card-accent-line" style={{ background: item.accent }} />
+            </motion.div>
         </motion.div>
     );
 };
@@ -401,18 +362,32 @@ const Experience = () => {
                     ))}
                 </motion.div>
 
-                {/* ── Cards Grid ── */}
-                <AnimatePresence mode="popLayout">
+                {/* ── Timeline ── */}
+                <AnimatePresence mode="wait">
                     <motion.div
                         key={activeFilter}
-                        className="holo-grid"
+                        className="timeline-container"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 0.25 }}
+                        transition={{ duration: 0.3 }}
                     >
+                        {/* Central Line */}
+                        <motion.div
+                            className="timeline-line"
+                            initial={{ scaleY: 0 }}
+                            animate={{ scaleY: 1 }}
+                            transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        />
+
+                        {/* Timeline Items */}
                         {filtered.map((item, index) => (
-                            <HoloCard key={item.id} item={item} index={index} />
+                            <TimelineItem
+                                key={item.id}
+                                item={item}
+                                index={index}
+                                isLeft={index % 2 === 0}
+                            />
                         ))}
                     </motion.div>
                 </AnimatePresence>

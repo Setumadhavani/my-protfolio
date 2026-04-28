@@ -140,12 +140,55 @@
     }
 
     .footer-cta-card {
-        padding: 4rem 1.5rem;
-        border-radius: 40px;
+        padding: 3rem 1.5rem;
+        border-radius: 30px;
+        min-height: 300px;
     }
 
     .footer-cta-btn {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        padding: 0.9rem 1.75rem;
+    }
+    
+    .footer-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-heading {
+        font-size: 2rem;
+    }
+    
+    .footer-cta-card {
+        padding: 2.5rem 1.25rem;
+        min-height: 280px;
+    }
+    
+    .footer-cta-btn {
+        font-size: 0.95rem;
+        padding: 0.85rem 1.5rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .footer-profile {
+        padding: 0.6rem 1.25rem;
+    }
+    
+    .profile-avatar {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+    
+    .profile-name {
+        font-size: 0.9rem;
+    }
+    
+    .profile-role {
+        font-size: 0.75rem;
     }
 }
 

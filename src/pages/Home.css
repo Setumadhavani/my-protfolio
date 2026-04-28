@@ -216,6 +216,44 @@
         grid-row: auto;
         height: 300px;
     }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .section-heading {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-heading {
+        font-size: 1.75rem;
+    }
+    
+    .preview-card {
+        padding: 1.5rem;
+    }
+    
+    .preview-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .stat-item {
+        min-width: 120px;
+        width: 140px;
+        padding: 1.25rem 0.75rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .infinity-anim {
+        font-size: 2.5rem;
+    }
 }
 
 /* About/Brief */

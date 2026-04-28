@@ -116,3 +116,31 @@
         padding: 4rem 0;
     }
 }
+
+@media (max-width: 480px) {
+    .item {
+        width: 90vw;
+        height: 280px;
+        min-height: 280px;
+    }
+    
+    .activities-section {
+        padding: 3rem 0;
+    }
+    
+    .activities-section .section-header {
+        margin-bottom: 3rem;
+    }
+    
+    .section-heading {
+        font-size: 1.75rem;
+    }
+    
+    .section-subheading {
+        font-size: 1rem;
+    }
+    
+    .marquee-track {
+        gap: 1.5rem;
+    }
+}

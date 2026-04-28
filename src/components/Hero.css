@@ -50,7 +50,41 @@
 
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .social-links {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
     }
 }
 
@@ -119,6 +153,31 @@
 
 .glowing-card:hover {
     transform: perspective(1000px) rotateY(0) rotateX(0);
+}
+
+@media (max-width: 968px) {
+    .glowing-card {
+        transform: none;
+        padding: 1.5rem;
+    }
+    
+    .glowing-card:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .glowing-card {
+        padding: 1rem;
+    }
+    
+    .code-snippet-card {
+        padding: 1rem;
+    }
+    
+    .code-content {
+        font-size: 0.8rem;
+    }
 }
 
 .glow-effect {

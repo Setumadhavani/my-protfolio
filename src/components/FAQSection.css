@@ -97,6 +97,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 1.5rem;
+        padding: 2rem 0;
     }
 
     .faq-middle {
@@ -106,5 +107,41 @@
 
     .faq-right {
         align-self: flex-end;
+    }
+    
+    .faq-title {
+        font-size: 1.25rem;
+    }
+    
+    .faq-desc {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-section {
+        padding: 4rem 0;
+    }
+    
+    .faq-header {
+        margin-bottom: 3rem;
+    }
+    
+    .faq-item {
+        padding: 1.5rem 0;
+        gap: 1rem;
+    }
+    
+    .faq-title {
+        font-size: 1.1rem;
+    }
+    
+    .faq-desc {
+        font-size: 0.95rem;
+    }
+    
+    .faq-arrow-btn {
+        width: 40px;
+        height: 40px;
     }
 }

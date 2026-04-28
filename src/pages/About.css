@@ -17,6 +17,51 @@
         text-align: center;
         gap: 3rem;
     }
+    
+    .main-heading {
+        font-size: 2.5rem;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-heading {
+        font-size: 2rem;
+    }
+    
+    .focus-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .focus-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-heading {
+        font-size: 1.75rem;
+    }
+    
+    .intro-text {
+        font-size: 0.95rem;
+    }
+    
+    .sub-heading {
+        font-size: 0.8rem;
+    }
+    
+    .focus-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .card-icon {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 /* About Visual - Image Profile */

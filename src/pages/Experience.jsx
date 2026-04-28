@@ -43,14 +43,14 @@ const experiences = [
         accentRgb: '245,158,11',
         current: true,
         StatIcon: Zap,
-        stat: '50+ Students',
+        stat: '450+ Students',
     },
     {
         id: 3,
         role: 'Chairperson IEEE SOU WIE SB AG',
         company: 'IEEE SOU SB',
         period: '2026 – Present',
-        year: '2025',
+        year: '2026',
         type: 'work',
         image: 'http://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png',
         location: 'Silver Oak University',
@@ -61,7 +61,7 @@ const experiences = [
         accentRgb: '232,121,249',
         current: true,
         StatIcon: Users,
-        stat: '80+ Members',
+        stat: '180+ Members',
     },
     {
         id: 4,
@@ -79,14 +79,14 @@ const experiences = [
         accentRgb: '16,185,129',
         current: true,
         StatIcon: Users,
-        stat: '100+ Members',
+        stat: '180+ Members',
     },
     {
         id: 5,
         role: 'Webmaster IEEE SOU CS SBC',
         company: 'IEEE SOU SB',
         period: '2025 – 2026',
-        year: '2024',
+        year: '2025',
         type: 'work',
         image: 'http://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png',
         location: 'Silver Oak University',
@@ -109,7 +109,7 @@ const experiences = [
         image: 'http://ieee.socet.edu.in/wp-content/uploads/2025/04/Vector.png',
         location: 'Ahmedabad, Gujarat',
         description:
-            'Pursuing B.Tech with Honors in Machine Learning & Data Science. Active in Coding Club, IEEE branch, and multiple research initiatives.',
+            'Pursuing B.Tech with Honors in AI & Data Science. Active in Coding Club, IEEE branch, and multiple research initiatives.',
         tags: ['ML', 'Data Science', 'Engineering', 'Research'],
         accent: '#ec4899',
         accentRgb: '236,72,153',
@@ -164,11 +164,6 @@ const TimelineItem = ({ item, index, isLeft }) => {
                 whileHover={{ scale: 1.02, y: -4 }}
                 transition={{ duration: 0.3 }}
             >
-                {/* Year Badge */}
-                <div className="timeline-year" style={{ background: item.accent }}>
-                    {item.year}
-                </div>
-
                 {/* Card Header */}
                 <div className="timeline-card-header">
                     <div className="timeline-logo" style={{ borderColor: `rgba(${item.accentRgb},0.3)` }}>
@@ -236,6 +231,36 @@ const TimelineItem = ({ item, index, isLeft }) => {
     );
 };
 
+/* ─── Year Section ──────────────────────────────── */
+const YearSection = ({ year, items, startIndex }) => {
+    const ref = useRef(null);
+    const inView = useInView(ref, { once: true, margin: '-50px' });
+
+    return (
+        <div ref={ref} className="year-section">
+            <motion.div
+                className="year-header"
+                initial={{ opacity: 0, x: -30 }}
+                animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+                transition={{ duration: 0.5 }}
+            >
+                <div className="year-badge">{year}</div>
+                <div className="year-line" />
+            </motion.div>
+            <div className="year-items">
+                {items.map((item, index) => (
+                    <TimelineItem
+                        key={item.id}
+                        item={item}
+                        index={startIndex + index}
+                        isLeft={index % 2 === 0}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+};
+
 /* ─── Main Component ────────────────────────────────── */
 const Experience = () => {
     const [activeFilter, setActiveFilter] = useState('all');
@@ -243,6 +268,19 @@ const Experience = () => {
     const filtered = activeFilter === 'all'
         ? experiences
         : experiences.filter(e => e.type === activeFilter);
+
+    // Group experiences by year
+    const groupedByYear = filtered.reduce((acc, item) => {
+        const year = item.year;
+        if (!acc[year]) {
+            acc[year] = [];
+        }
+        acc[year].push(item);
+        return acc;
+    }, {});
+
+    // Sort years in descending order (2026, 2025, 2024, 2023...)
+    const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
     return (
         <div className="exp-page">
@@ -380,15 +418,21 @@ const Experience = () => {
                             transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                         />
 
-                        {/* Timeline Items */}
-                        {filtered.map((item, index) => (
-                            <TimelineItem
-                                key={item.id}
-                                item={item}
-                                index={index}
-                                isLeft={index % 2 === 0}
-                            />
-                        ))}
+                        {/* Year Sections */}
+                        {sortedYears.map((year, yearIndex) => {
+                            const startIndex = sortedYears
+                                .slice(0, yearIndex)
+                                .reduce((sum, y) => sum + groupedByYear[y].length, 0);
+                            
+                            return (
+                                <YearSection
+                                    key={year}
+                                    year={year}
+                                    items={groupedByYear[year]}
+                                    startIndex={startIndex}
+                                />
+                            );
+                        })}
                     </motion.div>
                 </AnimatePresence>
 

@@ -23,7 +23,7 @@ const activitiesData = [
     },
     {
         id: 4,
-        image: "https://in3700.wordpress.com/wp-content/uploads/2026/01/img_2346.jpg",
+        image: "https://in3700.wordpress.com/wp-content/uploads/2026/04/pxl_20260425_095452357.jpg",
         title: "Team Collaboration",
         desc: "Brainstorming the next big thing."
     }

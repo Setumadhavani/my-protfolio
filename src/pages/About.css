@@ -31,7 +31,7 @@
 
 .profile-img-large {
     width: 100%;
-    max-width: 500px;
+    max-width: 580px;
     height: auto;
     object-fit: contain;
     /* Transparent PNG already, just ensure brightness */
@@ -71,7 +71,7 @@
     color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: 1.5rem;
-    max-width: 600px;
+    max-width: 700px;
     text-align: justify;
 }
 

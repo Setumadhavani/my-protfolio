@@ -10,20 +10,28 @@ const Contact = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-        setStatus('sending');
 
         const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
         const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
         const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+        // Prevent sending requests when environment variables are missing.
+        if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+            setStatus('error');
+            console.error('Email service is not configured. Check VITE_EMAILJS_* environment variables.');
+            setTimeout(() => setStatus(''), 5000);
+            return;
+        }
+
+        setStatus('sending');
+
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
             .then((result) => {
-                console.log(result.text);
                 setStatus('success');
                 e.target.reset();
                 setTimeout(() => setStatus(''), 5000);
             }, (error) => {
-                console.log(error.text);
+                console.error('Failed to send contact email.', error);
                 setStatus('error');
                 setTimeout(() => setStatus(''), 5000);
             });
@@ -152,29 +160,49 @@ const Contact = () => {
                         <p className="form-panel-subtitle">I'll get back to you within 24 hours.</p>
 
                         <form ref={form} onSubmit={sendEmail} className="contact-form-inner">
-                            {/* Hidden fields */}
-                            <input type="hidden" name="to_name" value="Setu Madhavani" />
-                            <input type="hidden" name="from_name" value="Portfolio Contact Form" />
-
                             <div className="form-row">
                                 <div className="cf-group">
                                     <label className="cf-label">Your Name</label>
-                                    <input type="text" name="user_name" placeholder="John Doe" className="cf-input" required />
+                                    <input 
+                                        type="text" 
+                                        name="from_name" 
+                                        placeholder="John Doe" 
+                                        className="cf-input" 
+                                        required 
+                                    />
                                 </div>
                                 <div className="cf-group">
                                     <label className="cf-label">Your Email</label>
-                                    <input type="email" name="user_email" placeholder="john@example.com" className="cf-input" required />
+                                    <input 
+                                        type="email" 
+                                        name="from_email" 
+                                        placeholder="john@example.com" 
+                                        className="cf-input" 
+                                        required 
+                                    />
                                 </div>
                             </div>
 
                             <div className="cf-group">
                                 <label className="cf-label">Subject</label>
-                                <input type="text" name="subject" placeholder="Project Inquiry / Collaboration / Hello..." className="cf-input" required />
+                                <input 
+                                    type="text" 
+                                    name="subject" 
+                                    placeholder="Project Inquiry / Collaboration / Hello..." 
+                                    className="cf-input" 
+                                    required 
+                                />
                             </div>
 
                             <div className="cf-group">
                                 <label className="cf-label">Message</label>
-                                <textarea name="message" rows="5" placeholder="Tell me about your project, idea, or just say hi..." className="cf-input cf-textarea" required />
+                                <textarea 
+                                    name="message" 
+                                    rows="5" 
+                                    placeholder="Tell me about your project, idea, or just say hi..." 
+                                    className="cf-input cf-textarea" 
+                                    required 
+                                />
                             </div>
 
                             <button

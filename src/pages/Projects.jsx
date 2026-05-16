@@ -15,8 +15,8 @@ const projects = [
         category: 'Full Stack',
         description: 'A comprehensive dashboard for managing products, orders, and analytics. Built with React, Node.js, and MongoDB.',
         tech: ['React', 'Node.js', 'MongoDB', 'Chart.js'],
-        links: { github: '#', live: '#' },
-        image: 'https://in3700.wordpress.com/wp-content/uploads/2026/01/download-2.jpg',
+        links: { github: 'https://github.com/Setumadhavani', live: 'https://github.com/Setumadhavani' },
+        image: 'https://in3700.wordpress.com/wp-content/uploads/2026/05/asd.png',
         detailedDescription: `This E-Commerce Dashboard is a full-featured admin panel designed to streamline online store management. It provides real-time analytics, inventory tracking, and order management in one unified interface.`,
         features: [
             'Real-time sales analytics with interactive Chart.js graphs',
@@ -38,8 +38,8 @@ const projects = [
         category: 'AI / Web App',
         description: 'Generates unique images based on text prompts using OpenAI API. Features a community gallery.',
         tech: ['React', 'OpenAI API', 'Tailwind', 'Vite'],
-        links: { github: '#', live: '#' },
-        image: 'https://in3700.wordpress.com/wp-content/uploads/2026/01/download.jpg',
+        links: { github: 'https://github.com/Setumadhavani', live: 'https://github.com/Setumadhavani' },
+        image: 'https://in3700.wordpress.com/wp-content/uploads/2026/05/asdsa.jpg',
         detailedDescription: `An AI-powered image generation platform that transforms text descriptions into stunning visuals using OpenAI's DALL·E API. Users can explore a community gallery of AI-generated artwork and share their own creations.`,
         features: [
             'Text-to-image generation using OpenAI DALL·E API',
@@ -61,7 +61,7 @@ const projects = [
         category: 'Mobile / Web',
         description: 'Real-time social platform with chat, stories, and feed. Optimized for performance and scalability.',
         tech: ['Next.js', 'Firebase', 'Socket.io'],
-        links: { github: '#', live: '#' },
+        links: { github: 'https://github.com/Setumadhavani', live: 'https://github.com/Setumadhavani' },
         image: 'https://in3700.wordpress.com/wp-content/uploads/2026/01/download-1.jpg',
         detailedDescription: `A full-featured social media platform built for real-time interaction. Users can post updates, share stories, chat with friends, and explore trending content — all with a smooth, mobile-first experience.`,
         features: [
@@ -84,8 +84,8 @@ const projects = [
         category: 'Fintech',
         description: 'Track your cryptocurrency assets in real-time with detailed charts and profit/loss calculation.',
         tech: ['Vue.js', 'D3.js', 'CoinGecko API'],
-        links: { github: '#', live: '#' },
-        image: 'https://in3700.wordpress.com/wp-content/uploads/2026/01/download-3.jpg',
+        links: { github: 'https://github.com/Setumadhavani', live: 'https://github.com/Setumadhavani' },
+        image: 'https://in3700.wordpress.com/wp-content/uploads/2026/05/1234.png',
         detailedDescription: `A powerful cryptocurrency portfolio tracker that pulls live market data from CoinGecko API. Users can monitor their holdings, visualize price trends with D3.js charts, and calculate real-time profit and loss.`,
         features: [
             'Live crypto prices from CoinGecko API with auto-refresh',

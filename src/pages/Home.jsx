@@ -104,7 +104,7 @@ const Home = () => {
                     >
                         <motion.div className="preview-card main" variants={fadeInUp}>
                             <img
-                                src="https://in3700.wordpress.com/wp-content/uploads/2026/01/download-2.jpg"
+                                src="https://in3700.wordpress.com/wp-content/uploads/2026/05/asd.png"
                                 alt="E-Commerce Platform"
                                 className="card-bg-image"
                             />
@@ -116,7 +116,7 @@ const Home = () => {
                         </motion.div>
                         <motion.div className="preview-card sub" variants={fadeInUp}>
                             <img
-                                src="https://in3700.wordpress.com/wp-content/uploads/2026/01/download.jpg"
+                                src="https://in3700.wordpress.com/wp-content/uploads/2026/05/ai-website-chatbots-1.webp"
                                 alt="AI Chatbot"
                                 className="card-bg-image"
                             />
@@ -128,7 +128,7 @@ const Home = () => {
                         </motion.div>
                         <motion.div className="preview-card sub" variants={fadeInUp}>
                             <img
-                                src="https://in3700.wordpress.com/wp-content/uploads/2026/01/download-3.jpg"
+                                src="https://in3700.wordpress.com/wp-content/uploads/2026/05/1234.png"
                                 alt="Crypto Dashboard"
                                 className="card-bg-image"
                             />

@@ -11,7 +11,7 @@ const KNOWLEDGE_BASE = [
     /* ── Identity ── */
     {
         keywords: ['who are you', 'who is setu', 'about setu', 'introduce', 'tell me about'],
-        answer: "I'm Setu Madhavani — a Full Stack Developer, UI/UX Designer, and cloud enthusiast from Ahmedabad, India. I'm currently pursuing B.Tech Computer Engineering (Honors in ML & Data Science) at Silver Oak University and actively freelancing since 2023. I lead the AWS Cloud Club and serve as Chairperson of IEEE SOU SIGHT SBG.",
+        answer: "I'm Setu Madhavani — a Full Stack Developer, UI/UX Designer, and cloud enthusiast from Ahmedabad, India. I'm currently pursuing B.Tech Computer Engineering (Honors in ML & Data Science) at Silver Oak University and actively freelancing since 2023. I lead the AWS Cloud Club and serve as Chairperson of IEEE SOU WIE SB AG.",
     },
     {
         keywords: ['name', 'full name'],
@@ -45,7 +45,7 @@ const KNOWLEDGE_BASE = [
     },
     {
         keywords: ['silver oak', 'sou', 'socet'],
-        answer: "Setu studies at **Silver Oak University (SOC Engineering & Technology)**, Ahmedabad, Gujarat. He is deeply involved in campus activities — leading the AWS Cloud Club and serving as Chairperson of IEEE SIGHT SBG.",
+        answer: "Setu studies at **Silver Oak University (SOC Engineering & Technology)**, Ahmedabad, Gujarat. He is deeply involved in campus activities — leading the AWS Cloud Club and serving as Chairperson of IEEE SOU WIE SB AG.",
     },
     {
         keywords: ['honors', 'specialization', 'machine learning', 'data science'],
@@ -89,15 +89,15 @@ const KNOWLEDGE_BASE = [
     /* ── Work Experience ── */
     {
         keywords: ['experience', 'work', 'job', 'career', 'role', 'position', 'worked'],
-        answer: "Setu's professional journey:\n\n🏢 **Freelancer** (Self-Employed) — 2023–Present | 20+ projects for global clients\n⚡ **Technical Lead** — AWS Cloud Club, Silver Oak University — 2025–Present\n🏛️ **Chairperson IEEE SIGHT SBG** — Silver Oak University — 2026–Present\n💻 **Webmaster IEEE SOU SC SBC** — 2024–2025",
+        answer: "Setu's professional journey:\n\n🏢 **Freelancer** (Self-Employed) — 2023–Present | 20+ projects for global clients\n⚡ **Technical Lead** — AWS Cloud Club, Silver Oak University — 2025–Present\n🏛️ **Chairperson IEEE SOU WIE SB AG** — Silver Oak University — 2026–Present\n💻 **Webmaster IEEE SOU SC SBC** — 2024–2025",
     },
     {
         keywords: ['freelance', 'freelancer', 'self employed'],
         answer: "Setu has been **freelancing since 2023**, building scalable web apps for clients worldwide. He handles the full project lifecycle — from discovery and design to development and deployment. Completed **20+ projects** so far!",
     },
     {
-        keywords: ['ieee', 'sight', 'sbg'],
-        answer: "Setu is the **Chairperson of IEEE SOU SIGHT SBG** (Special Interest Group on Humanitarian Technology) at Silver Oak University since 2026. He drives humanitarian tech events, community outreach, and cross-disciplinary projects.",
+        keywords: ['ieee', 'wie', 'sb ag', 'women in engineering'],
+        answer: "Setu is the **Chairperson of IEEE SOU WIE SB AG** (Women in Engineering Student Branch Affinity Group) at Silver Oak University since 2026. He drives women in engineering initiatives, community outreach, and cross-disciplinary projects.",
     },
     {
         keywords: ['webmaster', 'ieee website'],
@@ -109,7 +109,7 @@ const KNOWLEDGE_BASE = [
     },
     {
         keywords: ['current', 'currently', 'now', 'today'],
-        answer: "Currently (Feb 2026), Setu is:\n✅ Pursuing B.Tech at Silver Oak University\n✅ Freelancing (full-stack web development)\n✅ Technical Lead at AWS Cloud Club\n✅ Chairperson of IEEE SOU SIGHT SBG\n✅ Open to new opportunities!",
+        answer: "Currently (Feb 2026), Setu is:\n✅ Pursuing B.Tech at Silver Oak University\n✅ Freelancing (full-stack web development)\n✅ Technical Lead at AWS Cloud Club\n✅ Chairperson of IEEE SOU WIE SB AG\n✅ Open to new opportunities!",
     },
 
     /* ── Projects ── */
@@ -173,7 +173,7 @@ const KNOWLEDGE_BASE = [
     /* ── Achievements ── */
     {
         keywords: ['achievement', 'award', 'accomplishment', 'proud', 'win', 'won'],
-        answer: "Some of Setu's key achievements:\n🏆 Technical Lead at AWS Cloud Cloud (mentoring 50+ students)\n🏛️ Chairperson IEEE SIGHT SBG\n⭐ 8.9 CGPA with ML & Data Science Honors\n💼 20+ successful freelance projects\n🌐 Webmaster for official IEEE SOU website",
+        answer: "Some of Setu's key achievements:\n🏆 Technical Lead at AWS Cloud Cloud (mentoring 50+ students)\n🏛️ Chairperson IEEE SOU WIE SB AG\n⭐ 8.9 CGPA with ML & Data Science Honors\n💼 20+ successful freelance projects\n🌐 Webmaster for official IEEE SOU website",
     },
     {
         keywords: ['certification', 'certified', 'certificate', 'course'],

@@ -34,7 +34,7 @@ const experiences = [
         period: '2025 – Present',
         year: '2025',
         type: 'work',
-        image: 'http://ieee.socet.edu.in/wp-content/uploads/2026/01/Copy-of-Cloud-Club-Color-White-Transparent.png',
+        image: 'https://ieee.socet.edu.in/wp-content/uploads/2026/01/Copy-of-Cloud-Club-Color-White-Transparent.png',
         location: 'Silver Oak University',
         description:
             'Leading cloud computing initiatives, organizing AWS workshops, and mentoring students through hands-on cloud projects and certification paths.',
@@ -52,7 +52,7 @@ const experiences = [
         period: '2026 – Present',
         year: '2026',
         type: 'work',
-        image: 'http://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png',
+        image: 'https://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png',
         location: 'Silver Oak University',
         description:
             'Leading the Women in Engineering affinity group, empowering women in technology through workshops, mentorship programs, and inspiring initiatives at Silver Oak University.',
@@ -70,7 +70,7 @@ const experiences = [
         period: '2026 – JAN TO MARCH',
         year: '2026',
         type: 'work',
-        image: 'http://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png',
+        image: 'https://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png',
         location: 'Silver Oak University',
         description:
             'Heading the SIGHT student branch group, driving humanitarian technology events, community outreach programs, and cross-disciplinary collaborations.',
@@ -88,7 +88,7 @@ const experiences = [
         period: '2025 – 2026',
         year: '2025',
         type: 'work',
-        image: 'http://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png',
+        image: 'https://ieee.socet.edu.in/wp-content/uploads/2025/09/Vector.png',
         location: 'Silver Oak University',
         description:
             'Designed and maintained the official IEEE student branch website. Managed digital presence, event pages, and collaborated with multiple sub-committees.',
@@ -106,7 +106,7 @@ const experiences = [
         period: '2023 – 2027',
         year: '2023',
         type: 'education',
-        image: 'http://ieee.socet.edu.in/wp-content/uploads/2025/04/Vector.png',
+        image: 'https://ieee.socet.edu.in/wp-content/uploads/2025/04/Vector.png',
         location: 'Ahmedabad, Gujarat',
         description:
             'Pursuing B.Tech with Honors in AI & Data Science. Active in Coding Club, IEEE branch, and multiple research initiatives.',
